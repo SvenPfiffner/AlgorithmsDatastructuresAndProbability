@@ -8,8 +8,8 @@ import java.util.LinkedList;
  */
 public class SimpleGraph implements Graph{
 	
+	private LinkedList<Edge> edgeList; //The graph is stored as an edge list
 	private LinkedList<Integer>[] adjList; //The graph is stored as an adjacency list
-	private int edgeCount = 0; //Keeps track of the amount of edges in the graph
 	
 	/**
 	 * Constructor
@@ -34,14 +34,29 @@ public class SimpleGraph implements Graph{
 	}
 	
 	/**
+	 * Get all the edges of this graph as a list
+	 * @return LinkedList of edges
+	 */
+	@SuppressWarnings("unchecked")
+	public LinkedList<Edge> getEdgeList() {
+		LinkedList<Edge> out = new LinkedList<Edge>();
+		
+		for(Edge e: edgeList) {
+			out.add(e.clone());
+		}
+		
+		return out;
+	}
+	
+	/**
 	 * Connect two given nodes with an edge
 	 * @param x one vertex
 	 * @param y other vertex
 	 */
 	public void connect(int x, int y) {
-		edgeCount++;
 		adjList[x].add(y);
 		adjList[y].add(x);
+		edgeList.add(new Edge(x,y));
 	}
 	
 	/**
@@ -51,9 +66,25 @@ public class SimpleGraph implements Graph{
 	 * @return true if edge was deleted, false if no edge was present
 	 */
 	public boolean disconnect(int x, int y) {
-		boolean hadEdge = (adjList[x].removeFirstOccurrence(y) && adjList[y].removeFirstOccurrence(x));
-		edgeCount = (hadEdge)? edgeCount-1: edgeCount;
-		return hadEdge;
+		boolean edgePresent = (adjList[x].removeFirstOccurrence(y) && adjList[y].removeFirstOccurrence(x));
+		
+		if(edgePresent) {
+			for(Edge e: edgeList) {
+				if(e.one() == x && e.other() == y) {
+					edgeList.remove(e);
+					continue;
+				}
+			}
+			for(Edge e: edgeList) {
+				if(e.one() == y && e.other() == x) {
+					edgeList.remove(e);
+					continue;
+				}
+			}
+		}
+		
+		return edgePresent;
+		
 	}
 	
 	/**
@@ -88,7 +119,7 @@ public class SimpleGraph implements Graph{
 	 * @return int that stores the amount of edges in the graph
 	 */
 	public int getEdgeCount() {
-		return edgeCount;
+		return edgeList.size();
 	}
 	
 	/**
