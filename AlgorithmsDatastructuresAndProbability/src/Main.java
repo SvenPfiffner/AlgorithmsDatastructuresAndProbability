@@ -1,14 +1,25 @@
+import java.util.Arrays;
+import java.util.Random;
+
 import datastructures.SimpleGraph;
-import graphs.Connection;
-import probability.PiTargetShoot;
 
 //Use this class to test functionality of the scripts
 public class Main {
 
 	public static void main(String[] args) {
-		int a = 10000000;
-		System.out.println(PiTargetShoot.computeParallel(a));
-		System.out.println(PiTargetShoot.compute(a));
+		int size = 10;
+		int[] data = randArray(size);
+		SearchAndSort.Sort.bubbleSort(data);
+		System.out.println("A: " + Arrays.toString(data));
+	}
+	
+	public static int[] randArray(int size) {
+		int[] out = new int[size];
+		Random rand = new Random();
+		for(int i = 0; i<size; i++) {
+			out[i] = rand.nextInt((int)Math.pow(size, 2));
+		}
+		return out;
 	}
 	
 	public static SimpleGraph testGraph() {
