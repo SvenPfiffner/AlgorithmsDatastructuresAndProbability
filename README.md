@@ -12,6 +12,8 @@ This repository contains deterministic and non deterministic algorithms discusse
 - Interpolation search
 - Linear search
 - Bubble sort
+- Insertion sort
+- Selection sort
 - Heap sort
 - Merge sort
 - Quick sort
