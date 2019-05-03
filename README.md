@@ -7,6 +7,7 @@ This repository contains deterministic and non deterministic algorithms discusse
 - Checking if graph is fully connected using breadth first search
 - Finding articulation nodes
 - Kargers MinCut algorithm
+
 ## Data Processing
 - Binary search
 - Interpolation search
@@ -16,7 +17,8 @@ This repository contains deterministic and non deterministic algorithms discusse
 - Selection sort
 - Heap sort
 - Merge sort
-- Quick sort
+- Quick sort (random pivoting)
+
 ## Numerical stuff
 - Target shooting of pi (both sequential and parallel)
 - Computing binomial coefficients
