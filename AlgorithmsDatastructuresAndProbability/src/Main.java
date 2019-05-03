@@ -9,8 +9,8 @@ public class Main {
 	public static void main(String[] args) {
 		int size = 10;
 		int[] data = randArray(size);
-		SearchAndSort.Sort.bubbleSort(data);
-		System.out.println("A: " + Arrays.toString(data));
+		SearchAndSort.Sort.quickSort(data);
+		System.out.println(Arrays.toString(data));
 	}
 	
 	public static int[] randArray(int size) {
