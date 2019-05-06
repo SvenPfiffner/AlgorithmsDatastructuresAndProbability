@@ -1,6 +1,9 @@
 package SearchAndSort;
 
 import java.util.Random;
+import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ForkJoinTask;
+import java.util.concurrent.RecursiveAction;
 
 /**
  * This class contains some static methods which implement common comparison based sort-algorithms
@@ -77,6 +80,13 @@ public class Sort {
 		mergeSortRec(data, 0, data.length-1);
 	}
 	
+	public static void parallelMergeSort(int[] input) {
+		int numThreads = Runtime.getRuntime().availableProcessors();
+		ForkJoinPool pool = new ForkJoinPool(numThreads);
+		ForkJoinTask<Void> job = pool.submit(new MergeSortTask(input, 0, input.length-1));
+		job.join();
+	}
+	
 	/**
 	 * Sort a given array using quickSort
 	 * @param data to sort
@@ -112,7 +122,7 @@ public class Sort {
 	 * @param mid center of border
 	 * @param hi right side of border
 	 */
-	private static void merge(int[] data, int lo, int mid, int hi) {
+	public static void merge(int[] data, int lo, int mid, int hi) {
 		int lo2 = mid + 1;
 		
 		//We can leave the merge if all elements of one subarray are smaller than all of other 
@@ -209,4 +219,29 @@ public class Sort {
 		data[a] = data[b];
 		data[b] = temp;
 	}
+}
+
+class MergeSortTask extends RecursiveAction {
+
+	final int[] input;
+	final int lo;
+	final int hi;
+	
+	public MergeSortTask(int[] input, int lo, int hi) {
+		this.input = input;
+		this.lo = lo;
+		this.hi = hi;
+	}
+	
+	@Override
+	protected void compute() {
+		if(lo == hi) {
+			return;
+		} else {
+			int mid = (lo+hi) / 2;
+			invokeAll(new MergeSortTask(input, lo, mid), new MergeSortTask(input, mid+1, hi));
+			Sort.merge(input, lo, mid, hi);
+		}
+	}
+	
 }

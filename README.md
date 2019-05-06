@@ -20,6 +20,7 @@ This repository contains deterministic and non deterministic algorithms discusse
 - Selection sort
 - Heap sort
 - Merge sort
+- Parallel merge sort
 - Quick sort (random pivoting)
 
 ## Numerical stuff

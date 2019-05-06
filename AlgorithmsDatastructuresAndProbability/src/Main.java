@@ -2,6 +2,7 @@ import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Random;
 
+import SearchAndSort.Sort;
 import datastructures.SimpleGraph;
 import graphs.Coloring;
 import probability.MillerRabin;
@@ -10,7 +11,9 @@ import probability.MillerRabin;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println(graphs.Paths.getEulerTour(testGraph()));
+		int [] out = randArray(10);
+		Sort.parallelMergeSort(out);
+		System.out.println(Arrays.toString(out));
 	}
 	
 	public static int[] randArray(int size) {
