@@ -7,6 +7,8 @@ This repository contains deterministic and non deterministic algorithms discusse
 - Checking if graph is fully connected using breadth first search
 - Finding articulation nodes
 - Check for bipartition
+- Check if graph has eulertour
+- Find an eulertour through the graph
 - Kargers MinCut algorithm
 
 ## Data Processing

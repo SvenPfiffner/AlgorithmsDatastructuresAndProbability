@@ -10,7 +10,7 @@ import probability.MillerRabin;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println(Coloring.isBipartit(testGraph()));
+		System.out.println(graphs.Paths.getEulerTour(testGraph()));
 	}
 	
 	public static int[] randArray(int size) {
@@ -23,14 +23,17 @@ public class Main {
 	}
 	
 	public static SimpleGraph testGraph() {
-		SimpleGraph g = new SimpleGraph(6);
+		SimpleGraph g = new SimpleGraph(7);
 		g.connect(0, 1);
+		g.connect(0, 2);
+		g.connect(0, 5);
+		g.connect(0, 6);
 		g.connect(1, 2);
+		g.connect(5, 4);
+		g.connect(6, 4);
+		g.connect(2, 4);
 		g.connect(2, 3);
-		g.connect(3, 4);
-		g.connect(4, 5);
-		g.connect(5, 0);
-		g.connect(1, 5);
+		g.connect(4, 3);
 		return g;
 	}
 
