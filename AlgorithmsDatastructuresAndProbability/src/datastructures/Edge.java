@@ -30,4 +30,8 @@ public class Edge {
 	public int other() {
 		return y;
 	}
+	
+	public String toString() {
+		return "{" + x + "," + y + "}";
+	}
 }
