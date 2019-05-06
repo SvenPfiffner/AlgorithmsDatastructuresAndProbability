@@ -18,7 +18,7 @@ public class SimpleGraph implements Graph{
 	@SuppressWarnings("unchecked")
 	public SimpleGraph(int n) {
 		adjList = new LinkedList[n];
-		
+		edgeList = new LinkedList<Edge>();
 		for(int i = 0; i<n; i++) {
 			adjList[i] = new LinkedList<Integer>();
 		}
@@ -29,7 +29,7 @@ public class SimpleGraph implements Graph{
 	 * @param x the vertex we want the neighbours from
 	 * @return a LinkedList of neighbour vertices
 	 */
-	public LinkedList<Integer> getNeighbours(int x) {
+	public LinkedList<Integer> getNeighbors(int x) {
 		return adjList[x];
 	}
 	
