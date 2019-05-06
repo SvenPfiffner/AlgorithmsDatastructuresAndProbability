@@ -22,3 +22,4 @@ This repository contains deterministic and non deterministic algorithms discusse
 ## Numerical stuff
 - Target shooting of pi (both sequential and parallel)
 - Computing binomial coefficients
+- Miller-Rabin Prime Test

@@ -1,16 +1,19 @@
+import java.math.BigInteger;
 import java.util.Arrays;
 import java.util.Random;
 
 import datastructures.SimpleGraph;
+import probability.MillerRabin;
 
 //Use this class to test functionality of the scripts
 public class Main {
 
 	public static void main(String[] args) {
-		int size = 10;
-		int[] data = randArray(size);
-		SearchAndSort.Sort.quickSort(data);
-		System.out.println(Arrays.toString(data));
+		//This 50 digit number is known to be prime
+		BigInteger test = new BigInteger("52125697062031981959667707995340809347392556520339");
+		int certainty = 5;
+		System.out.println("Own Miller Rabin implementation: " + MillerRabin.isPrime(test, certainty));
+		System.out.println("Java-Intern implementation: " + test.isProbablePrime(certainty));
 	}
 	
 	public static int[] randArray(int size) {
