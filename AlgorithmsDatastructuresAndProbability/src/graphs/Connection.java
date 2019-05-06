@@ -46,7 +46,7 @@ public class Connection {
 		low[source] = dfs[source]; // And for now, it is also current nodes low-value
 		
 		//For each neighbor of the current node
-		for(int neighbor: g.getNeighbours(source)) {
+		for(int neighbor: g.getNeighbors(source)) {
 			//If said neighbor has not been visited by dfs yet
 			if(dfs[neighbor] == 0) {
 				//It will be a neighbor in the dfs tree, so we increase degrees
