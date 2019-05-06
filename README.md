@@ -6,6 +6,7 @@ This repository contains deterministic and non deterministic algorithms discusse
 - A datastructure for undirected, non weighted graphs
 - Checking if graph is fully connected using breadth first search
 - Finding articulation nodes
+- Check for bipartition
 - Kargers MinCut algorithm
 
 ## Data Processing
