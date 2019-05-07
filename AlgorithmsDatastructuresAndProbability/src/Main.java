@@ -5,13 +5,14 @@ import java.util.Random;
 import SearchAndSort.Sort;
 import datastructures.SimpleGraph;
 import graphs.Coloring;
+import graphs.Matching;
 import probability.MillerRabin;
 
 //Use this class to test functionality of the scripts
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println(Arrays.toString(Coloring.greedyColoring(testGraph())));
+		System.out.println(Matching.incMaxMatch(testGraph()));
 	}
 	
 	public static int[] randArray(int size) {
@@ -24,7 +25,7 @@ public class Main {
 	}
 	
 	public static SimpleGraph testGraph() {
-		SimpleGraph g = new SimpleGraph(6);
+		SimpleGraph g = new SimpleGraph(8);
 		g.connect(0, 1);
 		g.connect(0, 2);
 		g.connect(0, 4);
@@ -37,6 +38,7 @@ public class Main {
 		g.connect(3, 5);
 		g.connect(3, 4);
 		g.connect(4, 5);
+		g.connect(6, 7);
 		return g;
 	}
 

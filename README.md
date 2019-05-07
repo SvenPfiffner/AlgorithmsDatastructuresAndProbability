@@ -10,6 +10,7 @@ This repository contains deterministic and non deterministic algorithms discusse
 - Greedy coloring
 - Check if graph has eulertour
 - Find an eulertour through the graph
+- Find inclusion maximal matching
 - Kargers MinCut algorithm
 
 ## Data Processing
