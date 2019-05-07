@@ -11,9 +11,7 @@ import probability.MillerRabin;
 public class Main {
 
 	public static void main(String[] args) {
-		int [] out = randArray(10);
-		Sort.parallelMergeSort(out);
-		System.out.println(Arrays.toString(out));
+		System.out.println(Arrays.toString(Coloring.greedyColoring(testGraph())));
 	}
 	
 	public static int[] randArray(int size) {
@@ -26,17 +24,19 @@ public class Main {
 	}
 	
 	public static SimpleGraph testGraph() {
-		SimpleGraph g = new SimpleGraph(7);
+		SimpleGraph g = new SimpleGraph(6);
 		g.connect(0, 1);
 		g.connect(0, 2);
+		g.connect(0, 4);
 		g.connect(0, 5);
-		g.connect(0, 6);
+		g.connect(1, 5);
 		g.connect(1, 2);
-		g.connect(5, 4);
-		g.connect(6, 4);
+		g.connect(1, 3);
 		g.connect(2, 4);
 		g.connect(2, 3);
-		g.connect(4, 3);
+		g.connect(3, 5);
+		g.connect(3, 4);
+		g.connect(4, 5);
 		return g;
 	}
 

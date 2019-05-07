@@ -22,6 +22,44 @@ public class Coloring {
 	}
 	
 	/**
+	 * Colors the graph using greedy coloring (is guaranteed to color the graph with max[deg(x)+1])
+	 * @param g the graph to color
+	 * @return an array that stores the color of each vertex as an integer value
+	 */
+	public static int[] greedyColoring(Graph g) {
+		//Initialize output array
+		int[] out = new int[g.getVertexCount()];
+		Arrays.fill(out, -1);
+		
+		out[0] = 0; //Assign first vertex
+		
+		//Used to flag available colors (we are guaranteed to have at most |V| colors)
+		boolean used[] = new boolean[g.getVertexCount()];
+		
+		//Go through all nodes
+		for(int n = 1; n<g.getVertexCount(); n++) {
+			//Mark each neighbors color as not available
+			for(int neighbor: g.getNeighbors(n)) {
+				if(out[neighbor] != -1) {
+					used[out[neighbor]] = true;
+				}
+			} 
+			
+			//Assign the first available color
+			int color;
+			for(color = 0; color<g.getVertexCount(); color++) {
+				if(!used[color]) {break;}
+			}
+			
+			out[n] = color;
+			
+			//Reset flags
+			Arrays.fill(used, false);
+		}
+		return out;	
+	}
+	
+	/**
 	 * Checks recursively whether a given graph is bipartit
 	 * @param g the graph to check for bipartition
 	 * @param start the node at which we want to start checking
