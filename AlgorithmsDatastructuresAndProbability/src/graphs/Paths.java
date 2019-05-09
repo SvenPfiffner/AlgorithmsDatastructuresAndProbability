@@ -19,7 +19,7 @@ public class Paths {
 	 * @param g the graph to scan
 	 * @return true if euler tour exists, false if not
 	 */
-	public static boolean hasEulerTour(Graph g) {
+	public static boolean hasEulerTour(SimpleGraph g) {
 		//Go through each node and check if degree is even
 		for(int i = 0; i<g.getVertexCount(); i++) {
 			if(g.getNeighbors(i).size() % 2 != 0) {

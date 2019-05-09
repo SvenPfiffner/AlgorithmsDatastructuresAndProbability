@@ -4,6 +4,7 @@ This repository contains deterministic and non deterministic algorithms discusse
 # Content
 ## Graphs
 - A datastructure for undirected, non weighted graphs
+- A datastructure for directed, weighted graphs
 - Checking if graph is fully connected using breadth first search
 - Finding articulation nodes
 - Check for bipartition
