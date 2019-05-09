@@ -31,3 +31,4 @@ This repository contains deterministic and non deterministic algorithms discusse
 - Computing binomial coefficients
 - Miller-Rabin Prime Test
 - Prime factorization
+- (DP) Fibonacci calculator

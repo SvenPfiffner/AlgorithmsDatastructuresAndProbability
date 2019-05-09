@@ -12,7 +12,7 @@ import probability.MillerRabin;
 public class Main {
 
 	public static void main(String[] args) {
-		System.out.println(Matching.incMaxMatch(testGraph()));
+		System.out.println(misc.DpFib.fib(50));
 	}
 	
 	public static int[] randArray(int size) {
