@@ -4,7 +4,7 @@ import java.util.LinkedList;
 
 public class WeightedDirectedGraph implements Graph{
 
-	LinkedList<Connection>[] adjList; //Stores the connections in the graph
+	LinkedList<GraphConnection>[] adjList; //Stores the connections in the graph
 	LinkedList<Edge> edgeList; //Stores the edges of the graph
 	
 	/**
@@ -16,7 +16,7 @@ public class WeightedDirectedGraph implements Graph{
 		adjList = new LinkedList[n];
 		edgeList = new LinkedList<Edge>();
 		for(int i = 0; i<n; i++) {
-			adjList[i] = new LinkedList<Connection>();
+			adjList[i] = new LinkedList<GraphConnection>();
 		}
 	}
 	
@@ -53,7 +53,7 @@ public class WeightedDirectedGraph implements Graph{
 	public LinkedList<Integer> getNeighbors(int x) {
 		LinkedList<Integer> out = new LinkedList<Integer>();
 		
-		for(Connection c: adjList[x]) {
+		for(GraphConnection c: adjList[x]) {
 			out.add(c.target);
 		}
 		
@@ -65,7 +65,7 @@ public class WeightedDirectedGraph implements Graph{
 	 * @param x the vertex we want the neighbours from
 	 * @return a LinkedList of neighbour vertices
 	 */
-	public LinkedList<Connection> getConnections(int x) {
+	public LinkedList<GraphConnection> getConnections(int x) {
 		return adjList[x];
 	}
 
@@ -95,8 +95,8 @@ public class WeightedDirectedGraph implements Graph{
 	 * @param y other vertex
 	 * @param cost how much it should cost to traverse this edge
 	 */
-	public void connect(int x, int y, double cost) {
-		adjList[x].add(new Connection(y,cost));
+	public void connect(int x, int y, int cost) {
+		adjList[x].add(new GraphConnection(y,cost));
 		edgeList.add(new Edge(x,y));
 	}
 
@@ -112,33 +112,4 @@ public class WeightedDirectedGraph implements Graph{
 		return false;
 	}
 
-}
-
-/**
- * This datastructure implements a connection in a graph by storing both the connections target location and its "cost"
- * @author Sven Pfiffner
- */
-class Connection {
-	final int target;
-	double cost;
-	
-	public Connection(int target, double cost) {
-		//Set fields
-		this.target = target;
-		this.cost = cost;
-	}
-	
-	public void setCost(double cost) {
-		this.cost = cost;
-	}
-	
-	public double getCost() {
-		return cost;
-	}
-	
-	public int getTarget() {
-		return target; 
-	}
-	
-	
 }
