@@ -32,3 +32,7 @@ This repository contains deterministic and non deterministic algorithms discusse
 - Miller-Rabin Prime Test
 - Prime factorization
 - (DP) Fibonacci calculator
+
+## Geometry
+Some common geometric algorithms can be found in the GeometryAlgs folder. Input and output works over a JavaFX GUI.
+[Use GeometryAlgs/src/application/Main.java to start the user interface]
