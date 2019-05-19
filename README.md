@@ -35,4 +35,4 @@ This repository contains deterministic and non deterministic algorithms discusse
 
 ## Geometry
 Some common geometric algorithms can be found in the GeometryAlgs folder. Input and output works over a JavaFX GUI.
-[Use GeometryAlgs/src/application/Main.java to start the user interface]
+[Use GeometryAlgs/src/application/Main.java to start the user interface **(MUST USE JAVAFX LIBRARY)**]
