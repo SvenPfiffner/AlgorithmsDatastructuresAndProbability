@@ -13,6 +13,7 @@ This repository contains deterministic and non deterministic algorithms discusse
 - Find an eulertour through the graph
 - Find inclusion maximal matching
 - Kargers MinCut algorithm
+- Edmond Karp (FordFulkerson) MaxFlow algorithm
 
 ## Data Processing
 - Binary search
