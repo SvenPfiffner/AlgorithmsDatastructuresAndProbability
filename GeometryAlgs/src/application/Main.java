@@ -43,6 +43,7 @@ public class Main extends Application {
 		canvas.widthProperty().bind(wrapperPane.widthProperty());
 		canvas.heightProperty().bind(wrapperPane.heightProperty());
 		VBox.setMargin(reset, new Insets(10));
+		BorderPane.setMargin(wrapperPane, new Insets(10));
 		wrapperPane.getStyleClass().add("canvas");
 				
 		//Event handling
