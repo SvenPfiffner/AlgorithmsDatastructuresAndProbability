@@ -13,7 +13,7 @@ import datastructures.Graph;
 public class Matching {
 
 	/**
-	 * Finds an inclusion maximum matching in a given graph
+	 * Finds an inclusion maximal matching in a given graph
 	 * @param g the graph to scan
 	 * @return a linkedlist of edges that are contained in the matching
 	 */
@@ -34,6 +34,16 @@ public class Matching {
 		//Return matching
 		return out;
 		
+	}
+	
+	/**
+	 * Find the size of a maximum matching in a bipartit graph 
+	 * @param g the graph to scan
+	 * @return the size of the maximum matching as an integer
+	 */
+	public static int maxBipartitMatch(Graph g) {
+		//TODO: Implement
+		return 0;
 	}
 	
 	/**

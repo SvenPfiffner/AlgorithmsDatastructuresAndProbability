@@ -79,6 +79,16 @@ public class WeightedDirectedGraph implements Graph{
 		return edgeList.size();
 	}
 
+	public int getConnectionCost(int x, int y) {
+		for(GraphConnection gc: adjList[x]) {
+			if(gc.getTarget() == y) {
+				return gc.getCost();
+			}
+		}
+		
+		return 0;
+	}
+	
 	/**
 	 * Connect x and y with a directed edge (from x to y) with no cost
 	 * @param x one vertex
