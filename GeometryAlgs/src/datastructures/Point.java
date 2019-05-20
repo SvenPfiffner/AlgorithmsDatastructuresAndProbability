@@ -27,13 +27,20 @@ public class Point {
 	}
 	
 	/**
+	 * Converts this point to a vector
+	 */
+	public Vector2D toVector() {
+		return new Vector2D(xPos, yPos);
+	}
+	
+	/**
 	 * Draw this Point on a given canvas
 	 */
 	public void drawOnCanvas(Canvas canvas) {
 		GraphicsContext gc = canvas.getGraphicsContext2D();
 		gc.setStroke(Color.BLACK);
 		gc.setLineWidth(4);
-		gc.strokeOval(xPos, yPos, 4, 4);
+		gc.strokeOval(xPos-2, yPos-2, 4, 4);
 	}
 	
 }

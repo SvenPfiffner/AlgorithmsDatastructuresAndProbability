@@ -2,7 +2,6 @@ package application;
 
 import java.util.ArrayList;
 
-import algs.Clarkson;
 import datastructures.Point;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
@@ -20,7 +19,11 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 
-
+/**
+ * A simple JavaFx window where the user can draw points on a canvas
+ * @author Sven Pfiffner
+ *
+ */
 public class Main extends Application {
 	
 	static ArrayList<Point> points = new ArrayList<Point>();

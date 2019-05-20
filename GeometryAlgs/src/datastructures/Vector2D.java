@@ -36,6 +36,17 @@ public class Vector2D {
 		return new Vector2D(x+v,y+v);
 	}
 	
+	
+	/**
+	 * Substracts another vector from this one
+	 * @param v vector to substract
+	 * @return new vector with corresponding values
+	 */
+	public Vector2D sub(Vector2D v) {
+		return new Vector2D(x-v.getX(), y-v.getY()); 
+		
+	}
+	
 	/**
 	 * Performs a scalar multiplication on the vector
 	 * @param v the scalar to multiply
@@ -46,12 +57,44 @@ public class Vector2D {
 	}
 	
 	/**
+	 * Performs a scalar vector multiplication on the vector
+	 * @param v the other vector
+	 * @return value of the scalar vector multiplication
+	 */
+	public double scalarMul(Vector2D v) {
+		return (x*v.getX()+y*v.getY());
+	}
+	
+	/**
 	 * Adds another vector to this one (vector addition)
 	 * @param v vector to add
 	 * @return new vector with corresponding values
 	 */
 	public Vector2D add(Vector2D v) {
 		return new Vector2D(x+v.getX(), y+v.getY());
+	}
+	
+	/**
+	 * Get the length of this vector
+	 * @return double value corresponding to lenght
+	 */
+	public double lenght() {
+		return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+	}
+	
+	/**
+	 * Converts this vector to a point
+	 * @return Point corresponding to this vector
+	 */
+	public Point toPoint() {
+		return new Point(x,y);
+	}
+	
+	/**
+	 * To string method
+	 */
+	public String toString() {
+		return ("["+ x +","+ y +"]");
 	}
 	
 }
