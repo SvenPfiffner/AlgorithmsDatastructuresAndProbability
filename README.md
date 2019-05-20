@@ -34,5 +34,6 @@ This repository contains deterministic and non deterministic algorithms discusse
 - (DP) Fibonacci calculator
 
 ## Geometry
-Some common geometric algorithms can be found in the GeometryAlgs folder. Input and output works over a JavaFX GUI.
-[Use GeometryAlgs/src/application/Main.java to start the user interface **(MUST USE JAVAFX LIBRARY)**]
+- JavaFx skeleton to to draw points on a canvas and work with those points
+- Datastructure for a 2-dimensional vector
+- Datastructure for a point in a plane
