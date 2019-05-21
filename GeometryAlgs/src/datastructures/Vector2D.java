@@ -1,5 +1,9 @@
 package datastructures;
 
+import javafx.scene.canvas.Canvas;
+import javafx.scene.canvas.GraphicsContext;
+import javafx.scene.paint.Color;
+
 /**
  * Datastructure for a two dimensional vector
  * @author Sven Pfiffner
@@ -82,19 +86,22 @@ public class Vector2D {
 		return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
 	}
 	
-	/**
-	 * Converts this vector to a point
-	 * @return Point corresponding to this vector
-	 */
-	public Point toPoint() {
-		return new Point(x,y);
-	}
 	
 	/**
 	 * To string method
 	 */
 	public String toString() {
 		return ("["+ x +","+ y +"]");
+	}
+	
+	/**
+	 * Draw this vector as a point on a given canvas
+	 */
+	public void drawOnCanvas(Canvas canvas) {
+		GraphicsContext gc = canvas.getGraphicsContext2D();
+		gc.setStroke(Color.BLACK);
+		gc.setLineWidth(4);
+		gc.strokeOval(x-2, y-2, 4, 4);
 	}
 	
 }

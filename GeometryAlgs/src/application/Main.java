@@ -2,7 +2,7 @@ package application;
 
 import java.util.ArrayList;
 
-import datastructures.Point;
+import datastructures.Vector2D;
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -26,7 +26,7 @@ import javafx.scene.paint.Color;
  */
 public class Main extends Application {
 	
-	static ArrayList<Point> points = new ArrayList<Point>();
+	static ArrayList<Vector2D> points = new ArrayList<Vector2D>();
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -57,8 +57,8 @@ public class Main extends Application {
 
 		canvas.setOnMouseClicked(event -> {
 			//TODO: Fill in what happens upon mouse click on canvas
-			Point p = new Point(event.getX(), event.getY());
-			points.add(p);
+			Vector2D v = new Vector2D(event.getX(), event.getY());
+			points.add(v);
 			update(canvas);
 		});
 				
@@ -88,8 +88,8 @@ public class Main extends Application {
 		gc.clearRect(0, 0, canvas.getWidth(), canvas.getHeight());
 				
 		//draw all points
-		for(Point p: points) {
-			p.drawOnCanvas(canvas);
+		for(Vector2D v: points) {
+			v.drawOnCanvas(canvas);
 		}
 				
 		//TODO: Draw desired stuff

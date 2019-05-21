@@ -37,4 +37,3 @@ This repository contains deterministic and non deterministic algorithms discusse
 ## Geometry
 - JavaFx skeleton to to draw points on a canvas and work with those points
 - Datastructure for a 2-dimensional vector
-- Datastructure for a point in a plane
