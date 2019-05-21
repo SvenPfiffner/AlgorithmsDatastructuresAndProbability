@@ -1,5 +1,7 @@
 package datastructures;
 
+import java.util.Collection;
+
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -61,6 +63,15 @@ public class Vector2D {
 	}
 	
 	/**
+	 * Returns the cross product of this vector with another vector
+	 * @param v the other vector
+	 * @return vector product
+	 */
+	public double cross(Vector2D v) {
+		return x*v.getY() - y * v.getX();
+	}
+	
+	/**
 	 * Performs a scalar vector multiplication on the vector
 	 * @param v the other vector
 	 * @return value of the scalar vector multiplication
@@ -83,7 +94,7 @@ public class Vector2D {
 	 * @return double value corresponding to lenght
 	 */
 	public double lenght() {
-		return Math.sqrt(Math.pow(x, 2) + Math.pow(y, 2));
+		return Math.hypot(x, y);
 	}
 	
 	
@@ -102,6 +113,13 @@ public class Vector2D {
 		gc.setStroke(Color.BLACK);
 		gc.setLineWidth(4);
 		gc.strokeOval(x-2, y-2, 4, 4);
+	}
+	
+	/**
+	 * Returns the distance between this vectors point and another given point
+	 */
+	public double distance(Vector2D v) {
+		return Math.hypot(x-v.getX(), y-v.getY());
 	}
 	
 }
