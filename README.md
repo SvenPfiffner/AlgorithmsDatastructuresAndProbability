@@ -35,5 +35,6 @@ This repository contains deterministic and non deterministic algorithms discusse
 - (DP) Fibonacci calculator
 
 ## Geometry
-- JavaFx skeleton to to draw points on a canvas and work with those points
+- Megiddo's min circle algorithm
+- JavaFx GUI to interact with the algorithm
 - Datastructure for a 2-dimensional vector

@@ -33,7 +33,7 @@ import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 
 /**
- * Implements clarksons min circle algorithm
+ * Implements Megiddo's min circle algorithm
  * @author Sven Pfiffner
  */
 public class Megiddo {
