@@ -30,7 +30,6 @@ import java.util.Random;
 import datastructures.Circle;
 import datastructures.Vector2D;
 import javafx.scene.canvas.Canvas;
-import javafx.scene.canvas.GraphicsContext;
 
 /**
  * Implements Megiddo's min circle algorithm
@@ -94,12 +93,17 @@ public class Megiddo {
 		circle = makeCircle(points);
 	}
 	
+	/**
+	 * Creates the smallest enclosing circle for a given list of points
+	 * @param points
+	 * @return
+	 */
 	public static Circle makeCircle(List<Vector2D> points) {
 		// Clone list to preserve the caller's data, randomize order
 		List<Vector2D> shuffled = new ArrayList<>(points);
 		Collections.shuffle(shuffled, new Random());
 		
-		// Progressively add points to circle or recompute circle
+		// Pro gressively add points to circle or recompute circle
 		Circle c = null;
 		for (int i = 0; i < shuffled.size(); i++) {
 			Vector2D p = shuffled.get(i);
