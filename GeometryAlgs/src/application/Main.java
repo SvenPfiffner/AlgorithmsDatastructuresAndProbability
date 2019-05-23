@@ -140,7 +140,7 @@ public class Main extends Application {
 			Megiddo m = new Megiddo(points);
 			m.draw(canvas);
 		} else {
-			//Perform Voronoi
+			//FInd convex hull
 			ConvexHull ch = new ConvexHull(points);
 			ch.draw(canvas);
 		}
