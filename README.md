@@ -36,5 +36,7 @@ This repository contains deterministic and non deterministic algorithms discusse
 
 ## Geometry
 - Megiddo's min circle algorithm
+- Convex Hull algorithm
 - JavaFx GUI to interact with the algorithm
 - Datastructure for a 2-dimensional vector
+- Datastructure for a Circle
