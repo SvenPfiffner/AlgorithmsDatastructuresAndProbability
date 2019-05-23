@@ -1,7 +1,5 @@
 package datastructures;
 
-import java.util.Collection;
-
 import javafx.scene.canvas.Canvas;
 import javafx.scene.canvas.GraphicsContext;
 import javafx.scene.paint.Color;
@@ -10,7 +8,7 @@ import javafx.scene.paint.Color;
  * Datastructure for a two dimensional vector
  * @author Sven Pfiffner
  */
-public class Vector2D {
+public class Vector2D implements Comparable<Vector2D>{
 	final double x;
 	final double y;
 	
@@ -120,6 +118,15 @@ public class Vector2D {
 	 */
 	public double distance(Vector2D v) {
 		return Math.hypot(x-v.getX(), y-v.getY());
+	}
+
+	@Override
+	public int compareTo(Vector2D o) {
+		if (this.x == o.getX()) {
+			return (int)(this.y - o.getY());
+		} else {
+			return (int)(this.x - o.getX());
+		}
 	}
 	
 }

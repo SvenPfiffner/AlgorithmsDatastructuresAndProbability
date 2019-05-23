@@ -2,8 +2,8 @@ package application;
 
 import java.util.ArrayList;
 
+import algs.ConvexHull;
 import algs.Megiddo;
-import algs.Voronoi;
 import datastructures.Vector2D;
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -21,7 +21,6 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
-import javafx.scene.paint.Color;
 
 /**
  * A simple JavaFx window where the user can draw points on a canvas
@@ -33,7 +32,7 @@ public class Main extends Application {
 	static ArrayList<Vector2D> points = new ArrayList<Vector2D>();
 	final double deleteTresh = 10;
 	final RadioButton rb1 = new RadioButton("Smallest enclosing circle");
-	final RadioButton rb2 = new RadioButton("Voronoi Diagram");
+	final RadioButton rb2 = new RadioButton("Convex Hull");
 	
 	@Override
 	public void start(Stage primaryStage) {
@@ -142,8 +141,8 @@ public class Main extends Application {
 			m.draw(canvas);
 		} else {
 			//Perform Voronoi
-			Voronoi v = new Voronoi(points);
-			v.draw(canvas);
+			ConvexHull ch = new ConvexHull(points);
+			ch.draw(canvas);
 		}
 		
 		
